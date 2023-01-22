@@ -75,7 +75,7 @@
           <item>
            <widget class="QSpinBox" name="spinBox_Index">
             <property name="maximum">
-             <number>100000</number>
+             <number>1000000</number>
             </property>
            </widget>
           </item>
@@ -88,28 +88,28 @@
         <item>
          <widget class="QPushButton" name="pushButton_sortuj">
           <property name="text">
-           <string>find student </string>
+           <string>find a student </string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_wyswietl">
           <property name="text">
-           <string>show all students</string>
+           <string>display the table</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_usun">
           <property name="text">
-           <string>delete student</string>
+           <string>remove a student</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_dodaj">
           <property name="text">
-           <string>add student</string>
+           <string>add a student</string>
           </property>
          </widget>
         </item>

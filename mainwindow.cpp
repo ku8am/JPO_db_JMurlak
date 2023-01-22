@@ -48,6 +48,8 @@ void MainWindow::saveXML()
         QTextStream stream(&xml_file);
         stream << qdoc.toString();
         xml_file.close();
+        QMessageBox::information(this,tr("Success"),tr("You saved the file "));
+
     }
 
     else
@@ -74,18 +76,25 @@ void MainWindow::importXML()
             studentsFromXML.setContent(&xml_file);
             xml_file.close();
             studenci.readd(dataBase,studentsFromXML);
+            QMessageBox::information(this,tr("Success"),tr("You imported the file correctly"));
            }
+        else
+        {
+            QMessageBox::information(this,tr("Error"),tr("Failed to open file"));
+        }
     }
 }
 
 void MainWindow::on_pushButton_dodaj_clicked()
 {
     studenci.addStudent(dataBase,ui->lineEdit_Name->text(),ui->lineEdit_lName->text(),ui->lineEdit_field->text(), ui->lineEdit_faculty->text(),ui->spinBox_Index->value());
+    QMessageBox::information(this,tr("Success"),tr("You added a student"));
 }
 
 void MainWindow::on_pushButton_usun_clicked()
 {
     studenci.removeStudent(dataBase,ui->spinBox_Index->value());
+    QMessageBox::information(this,tr("Success"),tr("you removed a student"));
 }
 
 void MainWindow::on_pushButton_wyswietl_clicked()
