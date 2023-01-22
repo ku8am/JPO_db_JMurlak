@@ -2,9 +2,14 @@
 
 Students::Students(){}
 
-void Students::addStudent(std::vector<student> &db, QString nname, QString lname, QString faculty, QString field, int inumber)
-{
-    db.push_back(student(nname,lname,faculty, field,inumber ));
+bool Students::addStudent(std::vector<student> &db, QString nname, QString lname, QString faculty, QString field, int inumber)
+{   if(inumber>0)
+    {
+        db.push_back(student(nname,lname,faculty, field,inumber ));
+        return true;
+    }
+    else
+        return false;
 }
 
 
@@ -14,6 +19,7 @@ void Students::removeStudent(std::vector<student >& db, int inumber)
         if(db[i].getIndexNumber()==inumber)
             db.erase(db.begin()+i);
     }
+
 }
 
 std::vector<student> Students::findStudent(std::vector<student> db, int index)

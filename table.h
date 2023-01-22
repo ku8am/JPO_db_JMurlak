@@ -17,6 +17,7 @@ public:
     ~Table();
     void TableDisp(std::vector<student> db);
 
+
 private:
     Ui::Table *ui;
 };

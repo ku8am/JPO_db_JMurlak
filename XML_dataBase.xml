@@ -1,5 +1,6 @@
 <Students>
- <Student Field="" LastName="" Name="" Index="0" Faculty=""/>
- <Student Field="Wiet" LastName="Murlak" Name="Kuba" Index="40514" Faculty="Eit"/>
- <Student Field="WZ" LastName="Kowalski" Name="Adam " Index="4444" Faculty="Zarządzanie"/>
+ <Student Faculty="Informatyka" LastName="Kowalski" Name="Artur" Field="Wiet" Index="34444"/>
+ <Student Faculty="Eit" LastName="Murlak" Name="Kuba" Field="Wiet" Index="40514"/>
+ <Student Faculty="Zarządzanie" LastName="Kowalski" Name="Adam " Field="WZ" Index="4444"/>
+ <Student Faculty="Elektronika" LastName="Marciniak" Name="Adam" Field="WIet" Index="454440"/>
 </Students>

@@ -56,6 +56,3 @@ void Table::TableDisp(std::vector<student> db)
     }
 }
 
-//todo:
-//sciezka
-//na gita

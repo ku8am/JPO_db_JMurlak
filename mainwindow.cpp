@@ -24,23 +24,16 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::saveXML()
+void MainWindow::saveXML(QDomDocument qdoc, QString xml_filter)
 {
-    QDomDocument qdoc;
     studenci.writee(dataBase,qdoc);
-    QString xml_filter = "XML files (*.xml)";
-    //QString filePathh = QDir(QCoreApplication::applicationDirPath()).filePath("My.xml");
-    QString filename = QFileDialog::getOpenFileName(this,tr("Open file"),"C:/Users/Kuba/Documents/",xml_filter,&xml_filter,QFileDialog::DontUseNativeDialog);
-
+    QString filename = QFileDialog::getOpenFileName(this,tr("Open file"),"C:/",xml_filter,&xml_filter,QFileDialog::DontUseNativeDialog);
     if(filename.isEmpty())
     {
         QMessageBox::information(this,tr("Error"),tr("You dont select the file"));
     }
 
     QFile xml_file(filename);
-
-
-    //qDebug() << QCoreApplication::applicationDirPath();
 
 
     if(xml_file.open(QIODevice::WriteOnly | QIODevice::Text))
@@ -58,11 +51,9 @@ void MainWindow::saveXML()
     }
 }
 
-void MainWindow::importXML()
+void MainWindow::importXML(QDomDocument studentsFromXML, QString xml_filter)
 {
-    QDomDocument studentsFromXML;
-    QString xml_filter = "XML files (*.xml)";
-    QString filename = QFileDialog::getOpenFileName(this,tr("Open file"),"C:/Users/Kuba/Documents/",xml_filter,&xml_filter,QFileDialog::DontUseNativeDialog);
+    QString filename = QFileDialog::getOpenFileName(this,tr("Open file"),"C:/",xml_filter,&xml_filter,QFileDialog::DontUseNativeDialog);
     QFile xml_file(filename);
 
     if(filename.isEmpty())
@@ -87,8 +78,11 @@ void MainWindow::importXML()
 
 void MainWindow::on_pushButton_dodaj_clicked()
 {
-    studenci.addStudent(dataBase,ui->lineEdit_Name->text(),ui->lineEdit_lName->text(),ui->lineEdit_field->text(), ui->lineEdit_faculty->text(),ui->spinBox_Index->value());
+    bool x = studenci.addStudent(dataBase,ui->lineEdit_Name->text(),ui->lineEdit_lName->text(),ui->lineEdit_field->text(), ui->lineEdit_faculty->text(),ui->spinBox_Index->value());
+    if(x)
     QMessageBox::information(this,tr("Success"),tr("You added a student"));
+    else
+    QMessageBox::information(this,tr("Success"),tr("You dont added a student, try again"));
 }
 
 void MainWindow::on_pushButton_usun_clicked()
@@ -115,10 +109,10 @@ void MainWindow::on_pushButton_sortuj_clicked()
 
 void MainWindow::on_pushButton_import_clicked()
 {
-    importXML();
+    importXML(doc, xml_type);
 }
 void MainWindow::on_pushButton_save_clicked()
 {
-    saveXML();
+    saveXML(doc, xml_type);
 }
 

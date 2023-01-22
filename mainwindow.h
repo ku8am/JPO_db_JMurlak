@@ -5,6 +5,15 @@
 
 #include <QMainWindow>
 
+#include <QMessageBox>
+#include <QTableWidget>
+#include <QTableWidgetItem>
+#include <table.h>
+#include <QFileDialog>
+#include <QFile>
+#include <QDomDocument>
+#include <QDebug>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -19,8 +28,14 @@ public:
     Students studenci;
     std::vector<student> dataBase;
     void showStudents(std::vector<student> db);
-    void saveXML(void);
-    void importXML(void);
+    void saveXML(QDomDocument qdoc, QString xml_filter);
+    void importXML(QDomDocument qdoc, QString xml_filter);
+    QDomDocument doc;
+    QString xml_type = "XML files (*.xml)";
+
+
+
+
 
 private slots:
 
