@@ -10,11 +10,12 @@ class Students
 {
 public:
     Students();
+    //funkcja przyjmująca
     bool addStudent(std::vector<student>& db, QString nname, QString lname, QString faculty, QString field, int inumber );
     void removeStudent(std::vector<student>& db, int inumber);
     std::vector<student> findStudent(std::vector<student> db, int index);
-    void readd (std::vector<student>& db, QDomDocument qdoc);
-    void writee (std::vector<student>& db, QDomDocument &qdoc);
+    void readXML (std::vector<student>& db, QDomDocument qdoc);
+    void writeXML (std::vector<student>& db, QDomDocument &qdoc);
 private:
 };
 

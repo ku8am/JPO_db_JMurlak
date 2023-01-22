@@ -12,7 +12,6 @@ bool Students::addStudent(std::vector<student> &db, QString nname, QString lname
         return false;
 }
 
-
 void Students::removeStudent(std::vector<student >& db, int inumber)
 {
     for(int i=0; i<(int)db.size(); ++i){
@@ -35,7 +34,7 @@ std::vector<student> Students::findStudent(std::vector<student> db, int index)
         }
 }
 
-void Students::readd(std::vector<student> &db,QDomDocument qdoc)
+void Students::readXML(std::vector<student> &db,QDomDocument qdoc)
 {
     QDomElement root = qdoc.documentElement();
     QDomElement node = root.firstChild().toElement();
@@ -54,7 +53,7 @@ void Students::readd(std::vector<student> &db,QDomDocument qdoc)
     node = node.nextSibling().toElement();
 }
 
-void Students::writee(std::vector<student> &db, QDomDocument &qdoc)
+void Students::writeXML(std::vector<student> &db, QDomDocument &qdoc)
 {
     QDomElement root = qdoc.createElement("Students");
     qdoc.appendChild(root);
@@ -70,11 +69,3 @@ void Students::writee(std::vector<student> &db, QDomDocument &qdoc)
         root.appendChild(student);
     }
 }
-
-
-
-
-
-
-
-

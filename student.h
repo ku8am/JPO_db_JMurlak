@@ -4,6 +4,7 @@
 
 class student
 {
+
     QString name;
     QString lastName;
     int indexNumber;
@@ -12,6 +13,7 @@ class student
 
 
 public:
+
     student(QString n, QString ln, QString fa, QString fi, int num);
     QString getName(void);
     QString getLastName(void);

@@ -23,11 +23,11 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    Students studenci;
+    Students manageStudents;
     std::vector<student> dataBase;
-    void showStudents(std::vector<student> db);
     void saveXML(QDomDocument qdoc, QString xml_filter);
     void importXML(QDomDocument qdoc, QString xml_filter);
     QDomDocument doc;

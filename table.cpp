@@ -55,4 +55,3 @@ void Table::TableDisp(std::vector<student> db)
         }
     }
 }
-

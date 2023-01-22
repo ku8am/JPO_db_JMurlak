@@ -26,7 +26,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::saveXML(QDomDocument qdoc, QString xml_filter)
 {
-    studenci.writee(dataBase,qdoc);
+    manageStudents.writeXML(dataBase,qdoc);
     QString filename = QFileDialog::getOpenFileName(this,tr("Open file"),"C:/",xml_filter,&xml_filter,QFileDialog::DontUseNativeDialog);
     if(filename.isEmpty())
     {
@@ -66,7 +66,7 @@ void MainWindow::importXML(QDomDocument studentsFromXML, QString xml_filter)
         {
             studentsFromXML.setContent(&xml_file);
             xml_file.close();
-            studenci.readd(dataBase,studentsFromXML);
+            manageStudents.readXML(dataBase,studentsFromXML);
             QMessageBox::information(this,tr("Success"),tr("You imported the file correctly"));
            }
         else
@@ -78,7 +78,7 @@ void MainWindow::importXML(QDomDocument studentsFromXML, QString xml_filter)
 
 void MainWindow::on_pushButton_dodaj_clicked()
 {
-    bool x = studenci.addStudent(dataBase,ui->lineEdit_Name->text(),ui->lineEdit_lName->text(),ui->lineEdit_field->text(), ui->lineEdit_faculty->text(),ui->spinBox_Index->value());
+    bool x = manageStudents.addStudent(dataBase,ui->lineEdit_Name->text(),ui->lineEdit_lName->text(),ui->lineEdit_field->text(), ui->lineEdit_faculty->text(),ui->spinBox_Index->value());
     if(x)
     QMessageBox::information(this,tr("Success"),tr("You added a student"));
     else
@@ -87,7 +87,7 @@ void MainWindow::on_pushButton_dodaj_clicked()
 
 void MainWindow::on_pushButton_usun_clicked()
 {
-    studenci.removeStudent(dataBase,ui->spinBox_Index->value());
+    manageStudents.removeStudent(dataBase,ui->spinBox_Index->value());
     QMessageBox::information(this,tr("Success"),tr("you removed a student"));
 }
 
@@ -103,7 +103,7 @@ void MainWindow::on_pushButton_sortuj_clicked()
 {
     Table tc(this);
     tc.setWindowTitle("Found");
-    tc.TableDisp(studenci.findStudent(dataBase, ui->spinBox_Index->value()));
+    tc.TableDisp(manageStudents.findStudent(dataBase, ui->spinBox_Index->value()));
     tc.exec();
 }
 
