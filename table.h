@@ -10,13 +10,10 @@ class Table;
 class Table : public QDialog
 {
     Q_OBJECT
-
 public:
     explicit Table(QWidget *parent = nullptr);
     ~Table();
     void TableDisp(std::vector<student> db);
-
-
 private:
     Ui::Table *ui;
 };
