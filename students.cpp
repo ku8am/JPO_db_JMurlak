@@ -38,7 +38,6 @@ void Students::readXML(std::vector<student> &db,QDomDocument qdoc)
 {
     QDomElement root = qdoc.documentElement();
     QDomElement node = root.firstChild().toElement();
-
     while(node.isNull() == false)
        {
                while(!node.isNull()){

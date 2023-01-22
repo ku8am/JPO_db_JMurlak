@@ -1,6 +1,5 @@
 #ifndef TABLE_H
 #define TABLE_H
-
 #include <QDialog>
 #include "student.h"
 #include "students.h"

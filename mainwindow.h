@@ -2,9 +2,7 @@
 #define MAINWINDOW_H
 #include "student.h"
 #include "students.h"
-
 #include <QMainWindow>
-
 #include <QMessageBox>
 #include <QTableWidget>
 #include <QTableWidgetItem>

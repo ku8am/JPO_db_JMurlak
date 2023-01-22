@@ -1,6 +1,5 @@
 #include "student.h"
 
-
 student::student(QString n, QString ln, QString fa, QString fi, int num)
 {
     name=n;

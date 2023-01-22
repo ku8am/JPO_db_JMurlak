@@ -44,7 +44,6 @@ void MainWindow::saveXML(QDomDocument qdoc, QString xml_filter)
         QMessageBox::information(this,tr("Success"),tr("You saved the file "));
 
     }
-
     else
     {
     QMessageBox::information(this,tr("Error"),tr("Failed to open file"));

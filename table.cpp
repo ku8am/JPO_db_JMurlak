@@ -22,7 +22,6 @@ void Table::TableDisp(std::vector<student> db)
     QTableWidget *table= new QTableWidget(this);
     table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     table->setFixedSize(QSize(680,300));
-
     //table properties
     table->setShowGrid(true);
     table->setGridStyle(Qt::DotLine);
