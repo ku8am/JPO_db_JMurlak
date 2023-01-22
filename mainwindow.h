@@ -3,14 +3,9 @@
 #include "student.h"
 #include "students.h"
 #include <QMainWindow>
-#include <QMessageBox>
-#include <QTableWidget>
-#include <QTableWidgetItem>
 #include <table.h>
-#include <QFileDialog>
-#include <QFile>
 #include <QDomDocument>
-#include <QDebug>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
